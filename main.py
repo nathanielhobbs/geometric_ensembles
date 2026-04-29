@@ -16,6 +16,8 @@ print(config.base)
 print('config.COMPUTE_TRAINING', config.COMPUTE_TRAINING)
 print('config.ENSEMBLE_INCLUDED', config.ENSEMBLE_INCLUDED)
 
+log_folder_path = os.path.dirname(config.log_file_path)
+os.makedirs(log_folder_path, exist_ok=True) 
 log_file = open(config.log_file_path, 'w')
 
 SHORT_G = {
