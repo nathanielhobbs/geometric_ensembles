@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pkl
+*.pkl.dat
+*.pkl.dir
+*.pkl.bak
+*.npy
+*.h5
+results/
+cache/
+logs/
+*.log
+*.swp
+*.swo
+.ipynb_checkpoints/
+.env
