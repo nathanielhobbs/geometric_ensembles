@@ -207,6 +207,10 @@ for f_name, f in F_G_PAIRS:
     score = utils.get_score_from_model_index_list(models, oracle_idx_list, refs, 'BLEU')
     print(f'{f_name} oracle BLEU score is {score}')
     log_file.write(f'{f_name} oracle BLEU score is {score}\n')
+    oracle_hyps = [models[oracle_idx_list[i]][i] for i in range(num_hyps)]
+    out_path = f'{config.results_path}/{f_name}.oracle.hyps'
+    with open(out_path, 'w') as fp:
+        fp.writelines([h + '\n' for h in oracle_hyps])
 
 if config.ENSEMBLE_INCLUDED:
     exit()
